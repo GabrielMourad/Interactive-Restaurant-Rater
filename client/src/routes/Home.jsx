@@ -4,10 +4,10 @@ import Header from '../components/Header'
 import RestaurantList from '../components/RestaurantList'
 
 const Home = () => {
-  return <div>
+  return <div className = "container">
     <Header />
-    <AddRestaurant />
-    <RestaurantList/>
+    <AddRestaurant  />
+    <RestaurantList />
   </div>
   
 }
