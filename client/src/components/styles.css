@@ -1,0 +1,61 @@
+
+
+.login-page{
+    color: blueviolet;
+    text-align: left;
+    padding-top: 100px;
+    padding-left: 50px;
+    font-weight : bold;
+    size: 100px;
+}
+
+.login-header{
+    size: 100px;
+    padding-left : 15%;
+}
+.login-piece{
+    color: black;
+    font-weight : bold;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.register-portion { 
+    padding-top:50px;
+    margin-left : 1px;
+    width: 200px;
+    height: 200px;
+  }
+
+
+#light{
+    --bg-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+  }
+
+#dark{  
+    
+    --bg-color: rgb(29, 29, 32);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    color:white
+  
+}
+
+body{
+    background: var(--bg-color, white);
+   
+}
+
+#btn-modes{
+
+    padding-top: 100px;
+}
