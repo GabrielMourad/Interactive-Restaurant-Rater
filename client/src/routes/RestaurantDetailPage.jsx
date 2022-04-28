@@ -26,6 +26,7 @@ const RestaurantDetailPage = () => {
 
     fetchData();
   }, []);
+  
   return (
     <div>
       {selectedRestaurant && (

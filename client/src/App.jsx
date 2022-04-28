@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { RestaurantsContextProvider } from './context/RestaurantsContext';
 import Home from './routes/Home';
 import RestaurantDetailPage from './routes/RestaurantDetailPage';
@@ -8,13 +8,14 @@ import UpdatePage from './routes/UpdatePage';
 import Login from './routes/Login';
 import Register from './routes/Register';
 import ReactSwitch from "react-switch";
+import "./components/styles.css"
 
 export const ThemeContext = createContext(null); 
 
 const App = ()=>{
    
     const [theme, setTheme] = useState("light");
-    const [mode, setMode] = useState("Dark");
+    const [mode, setMode] = useState("Light");
 
     const toggleTheme = () => {
         setTheme((curr) => (curr === "light" ? "dark" : "light"));
@@ -29,6 +30,8 @@ const App = ()=>{
 
     };
     console.log(theme)
+    const [isAuthenticated, setAuthentication] = useState(false);
+    
     
  
 
@@ -39,9 +42,10 @@ const App = ()=>{
         <div className = "container" id ={theme}>
             <Router>
                 <Routes>
-                 <Route  path = "/" element = {<Login/>}/>
-                 <Route  path = "/register" element = {<Register/>}/>
-                 <Route  path = "/home" element = {<Home/>}/>
+                 <Route  path = "/" element = {<Navigate to="/login" />}/>
+                 <Route path = "/login" element = {!isAuthenticated ? (<Login/>) : (<Navigate to="/home" />)}/>
+                 <Route  path = "/register" element = {!isAuthenticated ? (<Register/>) : (<Navigate to="/home" />)}/>
+                 <Route  path = "/home" element = {isAuthenticated ? ( <Home/>) : (<Navigate to="/login" />)}/>
                  <Route  path = "/restaurants/:id/update" element = {<UpdatePage/>}/>
                  <Route  path = "/restaurants/:id" element = {<RestaurantDetailPage/>}/>
                 </Routes>

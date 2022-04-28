@@ -5,11 +5,11 @@ import { useNavigate} from "react-router-dom";
 import StarRating from './StarRating';
 
 
-export const RestaurantList = (props) => {
+export const RestaurantList = () => {
     const {restaurants, setRestaurants} = useContext(RestaurantsContext) 
     let navigate = useNavigate()
 
-    useEffect(async() =>{
+    useEffect(() =>{
             const fetchData = async() =>{
                 try {
                     const response = await RestaurantFinder.get("/")
@@ -76,7 +76,7 @@ export const RestaurantList = (props) => {
                      <td>{"$".repeat(restaurant.price_range)}</td>
                      <td>{renderRating(restaurant)}</td>
                      <td><button onClick = {(e) => handleUpdate(e, restaurant.id)} className="btn btn-warning">Update</button></td>
-                     <td><button onClick = {(e) => handleDelete(e, restaurant.id)} className="btn btn-danger">Delete</button></td>
+                     <td><button onClick = {(e) => handleDelete(e, restaurant.id)} className="btn btn-danger">Delete</button></td> 
                    </tr>
                   )
               })}

@@ -29,7 +29,7 @@ export const UpdateRestaurant = (props) => {
       location,
       price_range: priceRange,
     });
-    navigation("/");
+    navigation("/home");
   };
 
   return (
