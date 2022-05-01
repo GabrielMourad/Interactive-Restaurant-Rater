@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder'
-
+//hi
 export const AddReview = () => {
     const {id} = useParams()
     const navigate = useNavigate()
