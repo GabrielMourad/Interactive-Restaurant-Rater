@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { RestaurantsContext } from '../context/RestaurantsContext'
 import { ThemeContext } from '../App'
+import Wheel from '../components/Wheel'
 
 
 const Home = ({setAuth}) => { 
@@ -65,7 +66,9 @@ const Home = ({setAuth}) => {
         <div>
             <Header/>
             <RestaurantList/>
+            <Wheel/>
             <button onClick ={(e) => logout(e)}>Log Out</button>
+            
         </div>
     )
 }
