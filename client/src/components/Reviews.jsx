@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import {StarRating} from "./StarRating";
+import { RestaurantsContext } from "../context/RestaurantsContext";
 
 export const Reviews = ({ reviews }) => {
+  const  {userName} = useContext(RestaurantsContext)
   return (
     <div className="row row-cols-3 mb-2">
       {reviews.map((review) => {

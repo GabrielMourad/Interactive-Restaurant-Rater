@@ -62,9 +62,7 @@ export const RestaurantList = () => {
                     <th scope = "col">Restaurant</th>
                     <th scope = "col">Location</th>
                     <th scope = "col">Price Range</th>
-                    <th scope = "col">Ratings</th>
-                    <th scope = "col">Edit</th>
-                    <th scope = "col">Delete</th>
+                    <th scope = "col">Ratings</th>  
                 </tr>
             </thead>
             <tbody>
@@ -75,8 +73,6 @@ export const RestaurantList = () => {
                      <td>{restaurant.location}</td>
                      <td>{"$".repeat(restaurant.price_range)}</td>
                      <td>{renderRating(restaurant)}</td>
-                     <td><button onClick = {(e) => handleUpdate(e, restaurant.id)} className="btn btn-warning">Update</button></td>
-                     <td><button onClick = {(e) => handleDelete(e, restaurant.id)} className="btn btn-danger">Delete</button></td> 
                    </tr>
                   )
               })}

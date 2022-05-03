@@ -34,6 +34,9 @@ const RestaurantDetailPage = () => {
           <h1 className="text-center display-1">
             {selectedRestaurant.restaurant.name}
           </h1>
+          <h2>
+          {selectedRestaurant.restaurant.location}
+          </h2>
           <div className="text-center">
             <StarRating rating={selectedRestaurant.restaurant.average_rating} />
             <span className="text-warning ml-1">
