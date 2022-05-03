@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder'
+import { RestaurantsContext } from '../context/RestaurantsContext'
 
 export const AddReview = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const location = useLocation();
     const [name,setName] = useState("")
     const [reviewText,setReviewText] = useState("")
     const [rating,setRating] = useState("")
+    const {userName} = useContext(RestaurantsContext)
+    const profileName = userName
 
     const handleSubmitReview = async(e) => {
             e.preventDefault();
            
            try{
             const response = await RestaurantFinder.post(`/${id}/addReview`, {
-                name,
+                name : userName,
                 review : reviewText,
                 rating,
             })
@@ -29,6 +31,7 @@ export const AddReview = () => {
     }
   return (
     <div className = "mb-2">
+      <h1>Name: {profileName} </h1>
         <form action="">
             <div className="form-row">
                 <div className="form-group col-8">
