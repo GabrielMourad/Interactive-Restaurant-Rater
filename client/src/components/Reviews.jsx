@@ -1,5 +1,5 @@
 import React from "react";
-import {StarRating} from "./StarRating";
+import { StarRating } from "./StarRating";
 
 export const Reviews = ({ reviews }) => {
   return (
@@ -23,7 +23,6 @@ export const Reviews = ({ reviews }) => {
           </div>
         );
       })}
-
     </div>
   );
 };
