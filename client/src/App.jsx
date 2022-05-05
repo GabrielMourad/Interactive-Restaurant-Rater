@@ -26,14 +26,16 @@ const App = ()=>{
         setMode((curr => (theme === "light" ? "Dark" : "Light")))
 
         if(theme === "light"){
-            document.documentElement.style.setProperty('--bg-color',' #333')
+            document.documentElement.style.setProperty('--bg-color',' rgb(59, 32, 34)')
         }else{
-            document.documentElement.style.setProperty('--bg-color',' white')
+            document.documentElement.style.setProperty('--bg-color',' rgb(224, 99, 109)')
             
         }
 
     };
     console.log(theme)
+    //useState(true) == LOGIN 
+    //useState(false) == HOME
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     
     const setAuth = (boolean) => {
@@ -57,10 +59,17 @@ const App = ()=>{
         }
     }
     
+
+    //DELETE TO ADD TRUE OR FALSE
+
+    // useEffect(() => {
+    //     isAuth()
+    // })
+
     useEffect(() => {
         isAuth()
     })
-
+    
     return(
 
     <ThemeContext.Provider value ={{theme, setTheme, mode, setMode}}>

@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { RestaurantsContext } from '../context/RestaurantsContext';
 
 
 
@@ -12,6 +13,7 @@ const Login = ({setAuth}) => {
   })
 
   const {email, password} = inputs
+  const {userName} = useContext(RestaurantsContext)
   
   const onChange = (e) => {
     setInputs({...inputs, [e.target.name] : e.target.value})
@@ -34,7 +36,7 @@ const Login = ({setAuth}) => {
 
            localStorage.setItem("token", parseResponse.token);
            setAuth(true)
-           toast.success("login successfully\n" + email)
+           toast.success("login successfully\n" + userName)
         }else{
            setAuth(false)
            toast.error(parseResponse)

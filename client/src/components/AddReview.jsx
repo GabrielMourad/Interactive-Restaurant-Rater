@@ -28,6 +28,7 @@ export const AddReview = () => {
            }
            window.location.reload()
            
+           
     }
   return (
     <div className = "mb-2">

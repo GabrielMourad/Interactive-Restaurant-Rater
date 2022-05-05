@@ -1,8 +1,42 @@
+.login-page{
+    color: blueviolet;
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 50px;
+    font-weight : bold;
+    size: 100px;
+}
 
+.login-header{
+    size: 100px;
+}
+.login-piece{
+    color: black;
+    font-weight : bold;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
+.pad{
+    padding-right: 10px;
+}
+
+.register-portion { 
+    text-align: center;
+    
+    padding-top:50px;
+    padding-bottom:50px;
+    margin-left : 1px;
+  }
+
+.reg-button {
+    padding-top: 10px;
+}
 
 #light{
-    --bg-color: white;
+    --bg-color: rgb(224, 99, 109);
+    --bg-col: rgb(59, 32, 34);
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -23,8 +57,19 @@
 }
 
 body{
-    background: var(--bg-color,white);
+    background: var(--bg-color, rgb(224, 99, 109));
    
 }
 
+form {
+    padding-right: 350px;
+    padding-left: 350px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
+
+#btn-modes{
+
+    padding-top: 100px;
+}

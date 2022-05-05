@@ -9,11 +9,12 @@ import { ThemeContext } from '../App'
 import Wheel from '../components/Wheel'
 
 
+
 const Home = ({setAuth}) => { 
 
     const {userName, setUserName} = useContext(RestaurantsContext);
     const {theme, mode} = useContext(ThemeContext)
-    const {coupon, setCoupon} = useState("");
+    const {coupon, setCoupon} = useState();
 
     const coupons = [
         "Coupon1",
@@ -48,6 +49,7 @@ const Home = ({setAuth}) => {
         localStorage.removeItem("token")
         setAuth(false)
         toast.success("ඞ Logged out Successfully, Have a nice day ඞ")
+        
     }
 
     useEffect(() => {
@@ -64,10 +66,10 @@ const Home = ({setAuth}) => {
 
     return (
         <div>
+            <button className = "btn btn-danger float-left" onClick ={(e) => logout(e)}>Log Out</button>
             <Header/>
             <RestaurantList/>
-            <Wheel/>
-            <button onClick ={(e) => logout(e)}>Log Out</button>
+        
             
         </div>
     )
