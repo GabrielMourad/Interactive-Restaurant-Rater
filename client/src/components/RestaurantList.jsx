@@ -58,7 +58,7 @@ export const RestaurantList = () => {
     <div className = "list-group">
         <table className="table table-hover table-dark">
             <thead>
-                <tr className="bg bg-primary">
+                <tr className="restaurant-table-header">
                     <th scope = "col">Restaurant</th>
                     <th scope = "col">Location</th>
                     <th scope = "col">Price Range</th>

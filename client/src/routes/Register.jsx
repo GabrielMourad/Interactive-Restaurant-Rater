@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import '../components/styles.css'
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import LoginAndRegisterBanner from '../components/Banners/LoginAndRegisterBanner';
+
 const Register = ({setAuth}) => {
-  let nav = useNavigate();
   const[inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -34,6 +35,11 @@ const Register = ({setAuth}) => {
 
     localStorage.setItem("token", parseResponse.token); 
     setAuth(true)
+    toast.success("Register Complete");
+    toast.success("Welcome");
+         
+
+
     
       
     } catch (error) {
@@ -43,7 +49,8 @@ const Register = ({setAuth}) => {
 
   return (
   <div>
-    <h1 className = "text-center my-5">Register</h1>
+    <LoginAndRegisterBanner/>
+    <h1 className = "text-center my-5 font-weight-bold">Register</h1>
     <form onSubmit = {onSubmitForm}>
       <input className = "form-control my-3" type="email" name = "email" placeholder = "email" value = {email} onChange = {e => onChange(e)} />
       <input className = "form-control my-3" type="password" name = "password" placeholder = "password" value = {password} onChange = {e => onChange(e)} />

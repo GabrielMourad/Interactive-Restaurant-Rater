@@ -1,17 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder'
 import { RestaurantsContext } from '../context/RestaurantsContext'
-
+import { toast } from 'react-toastify'
 export const AddReview = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const [name,setName] = useState("")
     const [reviewText,setReviewText] = useState("")
     const [rating,setRating] = useState("")
-    const {userName} = useContext(RestaurantsContext)
-    const profileName = userName
+    const {userName, setUserName, setTheme, theme, setMode, mode} = useContext(RestaurantsContext)
+    const [name, setName] = useState(userName);
 
     const handleSubmitReview = async(e) => {
             e.preventDefault();
@@ -23,20 +22,50 @@ export const AddReview = () => {
                 rating,
             })
 
+
+            window.location.reload()
+            toast.success ("Review Submitted\n Hopefully nobody hates you now")
+
            }catch(err){
 
            }
-           window.location.reload()
            
            
     }
+
+
+    useEffect(() =>{
+        const fetchData = async() => {
+            try {
+                const response = await fetch("http://localhost:3006/dashboard/",{
+                method: "GET",
+                headers : {token: localStorage.token}
+
+          })  
+
+              const parseResponse = await response.json();
+              setUserName(parseResponse.user_name)
+                
+            } catch (error) {
+                console.error(error.message)
+            }
+        }
+        fetchData()
+  
+    }, [])
+
+ 
+
+
   return (
-    <div className = "mb-2">
+
+    <div>
+     <div className = "mb-2">
         <form action="">
             <div className="form-row">
                 <div className="form-group col-8">
                     <label htmlFor="name">Name</label>
-                    <input value = {name} onChange = {e => setName(e.target.value)}id = "name" placeholder = "name" type="text" className="form-control"  />
+                    <input value = {name} onChange = {e => setName(e.target.value)} id = "name" placeholder = {userName} type="text" className="form-control"  />
                 </div>
                 <div className="form-group col-4">
                     <label htmlFor="rating">Rating</label>
@@ -59,5 +88,6 @@ export const AddReview = () => {
             </button>
         </form>
     </div>
+</div>
   )
 }

@@ -3,6 +3,7 @@ import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import { RestaurantsContext } from '../context/RestaurantsContext';
+import LoginAndRegisterBanner from '../components/Banners/LoginAndRegisterBanner';
 
 
 
@@ -36,7 +37,7 @@ const Login = ({setAuth}) => {
 
            localStorage.setItem("token", parseResponse.token);
            setAuth(true)
-           toast.success("login successfully\n" + userName)
+           toast.success ("Login Successfully\n")
         }else{
            setAuth(false)
            toast.error(parseResponse)
@@ -53,14 +54,16 @@ const Login = ({setAuth}) => {
   return (
   
   <div>
-    <h1 className = "mt-5">Login</h1> 
-    <form onSubmit = {onSubmitForm}>
-      <input className = "form-control my-3" type="email" name="email" placeholder='email' value = {email} onChange = {e => onChange(e)}/>
-      <input className = "form-control my-3" type="password" name="password" placeholder='password' value = {password} onChange = {e => onChange(e)} />
-      <button className = "btn btn-primary btn-block">Submit</button>
-    </form>
-    <Link to='/register'>Don't have an account? Click here</Link>
-    
+    <LoginAndRegisterBanner/>
+      <div className = "login-box ">
+        <h1 className = "mt-5 font-weight-bold">Login</h1> 
+        <form onSubmit = {onSubmitForm}>
+            <input className = "form-control my-3" type="email" name="email" placeholder='email' value = {email} onChange = {e => onChange(e)}/>
+            <input className = "form-control my-3" type="password" name="password" placeholder='password' value = {password} onChange = {e => onChange(e)} />
+            <button className = "btn btn-primary btn-block">Submit</button>
+        </form>
+        <Link to='/register'>Don't have an account? Click here</Link>
+      </div>
   </div>
  
  )

@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import { RestaurantsContext } from '../context/RestaurantsContext';
 
 export const Header = () => {
-  const {userName} = useContext(RestaurantsContext)
   return (
-    <div>
-        <h2 className = "float-left">{userName}</h2>
+    <div className = "fw-bolder">
+      
+        
 
-        <h1  className = "font-weight-light display-1 text-center">
+        <h1  className = "font-weight-light display-1 text-center pt-5 mb-3">
            Restaurant Rater</h1>
+           
         
     </div>
   )

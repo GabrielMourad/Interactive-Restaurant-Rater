@@ -1,3 +1,9 @@
+*{
+    font-family: sans-serif;
+    background-image: unset;
+    
+}
+
 .login-page{
     color: blueviolet;
     text-align: center;
@@ -16,6 +22,7 @@
     padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
+    
 }
 
 .pad{
@@ -34,25 +41,62 @@
     padding-top: 10px;
 }
 
+.banner{
+    color:red;
+    size: 1px;
+    background-color: black;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 9%;
+    padding-bottom: 10px;
+    border-width: 2px;
+    border-style: solid ;
+    border-color: black;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+
+    
+}
+
+#light .banner{
+    color: black;
+    background-color:rgb(136, 38, 46)
+}
+
+#dark .banner{
+    color: white;
+    background-color:rgb(39, 17, 19)
+
+}
+
+.btn-banner{
+    background-color: rgb(81, 71, 214);
+}
+
+
 #light{
     --bg-color: rgb(224, 99, 109);
-    --bg-col: rgb(59, 32, 34);
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     height: 100px;
     width: 100%;
+    padding-top: 60px;
   }
 
 #dark{  
     
-    --bg-color: rgb(29, 29, 32);
+    --bg-color: rgb(56, 30, 32);
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     height: 100px;
     width: 100%;
-    color:white
+    color:white;
+    padding-top: 60px;
   
 }
 
@@ -62,14 +106,21 @@ body{
 }
 
 form {
-    padding-right: 350px;
-    padding-left: 350px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-right: 25%;
+    padding-left: 25%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 
 #btn-modes{
 
     padding-top: 100px;
+}
+
+.btn-hidden{
+    background-color: var(--bg-color);
+    color: var(--bg-color);
+    border: none;
+    float: right;
 }

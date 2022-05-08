@@ -5,12 +5,12 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 export const Reviews = ({ reviews }) => {
   const  {userName} = useContext(RestaurantsContext)
   return (
-    <div className="row row-cols-3 mb-2">
+    <div className="row row-cols-3 mb-2 ">
       {reviews.map((review) => {
         return (
           <div
             key={review.id}
-            className="card text-white bg-primary mb-3 mr-4"
+            className="card text-white bg-dark mb-3 mr-4"
             style={{ maxWidth: "30%" }}
           >
             <div className="card-header d-flex justify-content-between">
