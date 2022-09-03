@@ -1,5 +1,13 @@
-CREATE DATABASE yelp;
+CREATE DATABASE restaurantsDB;
 
+
+create TABLE restaurants(
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    location VARCHAR(50) NOT NULL,
+    price_range INT NOT NULL check(price_range >= 1 and price_range <= 5)
+    
+);
 
 CREATE TABLE reviews(
     id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -16,6 +24,10 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL
 );
 
---Inserting users
+
+--Inserting users example:
 
 INSERT INTO users(user_name, user_email, user_password) VALUES ('John', 'john323@gmail.com', 'johnnyboy32');
+
+--Inserting restaurants example:
+INSERT INTO restaurants(name, location, price_range) VALUES ("McDonalds", "Los Angeles", 2)

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RestaurantsContext } from '../context/RestaurantsContext';
 
 export const StarRating = ({rating}) => {
- 
   const stars = [];
   for(let i = 1; i<=5; i++){
     if(i <= rating){

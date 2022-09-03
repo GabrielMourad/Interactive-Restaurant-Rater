@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { RestaurantsContext } from '../../context/RestaurantsContext'
 import { toast } from 'react-toastify'
 
+
 function Banner({setAuth}) {
 
     const nav = useNavigate()
@@ -28,7 +29,7 @@ function Banner({setAuth}) {
 
          <div className = "float-left">
              <span className = "pl-2 pt-2 float-left font-weight-bold">Interactive Restaurant Rater</span>
-           <br/><h6 className = "mt-2 md-1 pt-1 pl-2 float-left font-weight-bold">{userName}</h6>
+           <br/><h6 className = "mt-2 md-1 pt-1 pl-2 float-left font-weight-bold">User: {userName}</h6>
         </div>
     
     </div>

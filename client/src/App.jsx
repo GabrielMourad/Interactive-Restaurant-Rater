@@ -11,7 +11,6 @@ import ReactSwitch from "react-switch";
 import "./components/styles.css"
 import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-import BannerHome from './components/Banners/BannerHome';
 
 export const ThemeContext = createContext(null); 
 toast.configure();
@@ -88,7 +87,7 @@ const App = ()=>{
                 </Routes>
             </Router>
 
-            <div>
+            <div className = "mt-2">
             <span>{mode} Mode</span>
             <ReactSwitch  onChange = {toggleTheme} checked ={theme === "dark"}/>
             
