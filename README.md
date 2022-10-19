@@ -1,4 +1,5 @@
 # Interactive-Restaurant-Rater(Yelp Clone)
+You can try out this project: https://www.yelp-clone.xyz/login 
 ## Description
 This is a full stack application that uses the PERN Stack:
 - Postgres : SQL based database used for the application
